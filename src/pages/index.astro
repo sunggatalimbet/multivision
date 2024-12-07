@@ -1,11 +1,24 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import Header from '../components/Header.astro';
+import Hero from "../components/Hero.astro";
+import AboutUs from "../components/AboutUs.astro";
+import Services from "../components/Services.astro";
+import WhyUs from "../components/WhyUs.astro";
+import Contacts from "../components/Contacts.astro";
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
-
 <Layout>
-	<Welcome />
+    <div class="flex flex-col bg-no-repeat bg-cover bg-center bg-[url('/public/hero-bg.png')] min-h-[675px] px-[10px] lg:px-12 py-[22px] lg:py-[34px]">
+        <Header/>
+        <Hero/>
+    </div>
+    <AboutUs/>
+    <Services/>
+    <div class="relative flex flex-col bg-no-repeat bg-cover bg-center bg-[url('/public/why-us-bg.png')] min-h-[675px]">
+        <div class="lg:hidden absolute top-0 left-0 right-0 bottom-0 inset-0 bg-black/50 w-full h-full z-10"/>
+        <WhyUs/>
+        <Contacts/>
+    </div>
+   
 </Layout>
