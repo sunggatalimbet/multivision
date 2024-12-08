@@ -15,3 +15,24 @@ import logoIcon from "../assets/logo.svg";
 
     <button class="uppercase px-[27px] md:px-11 py-[11px] md:py-[18px] text-[12px] bg-white text-black rounded-[30px] tracking-[21%] leading-[12px] shadow-header-button hover:bg-gray-200">Подать заявку</button>
 </header>
+
+<script>
+    import { gsap } from "gsap";
+
+    const onloadAnimation = () => {
+        gsap.fromTo("header",
+            {
+                y: -100, // Start from above the viewport
+                opacity: 0
+            },
+            {
+                y: 0, // Move to original position
+                opacity: 1,
+                duration: 1,
+                ease: "power3.out", // Smooth easing
+            }
+        );
+    }
+
+    window.addEventListener('load', onloadAnimation);    
+</script>

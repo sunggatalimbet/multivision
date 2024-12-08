@@ -1,14 +1,43 @@
 <div class="z-10 w-full flex flex-col justify-end sm:items-center sm:justify-center text-white flex-1">
     <div class="flex flex-col gap-4 md:gap-8 max-w-[500px] md:max-w-[700px] lg:max-w-[1000px] w-full md:mx-auto">
-        <div class="select-none text-wrap text-[28px] sm:text-[44px] md:text-[60px] lg:text-[82px] leading-[86.7%] tracking-[-4.5%]">
+        <div class="select-none text-wrap text-[28px] sm:text-[44px] md:text-[60px] lg:text-[82px] leading-[86.7%] tracking-[-4.5%] hero-title">
             <div class="flex sm:justify-center"><h1>воплащаем идеи</h1></div>
             <div class="flex sm:justfiy-start"><h1>создавая решения</h1></div>
             <div class="flex sm:justify-end "><h1>изменяя представления</h1></div>
         </div>
-        <div class="w-full flex text-left sm:text-center md:text-left justify-start sm:justify-center md:justify-end">
+        <div class="w-full flex text-left sm:text-center md:text-left justify-start sm:justify-center md:justify-end hero-description">
             <p class="max-w-[424px] text-[14px] md:text-[18px]">
                 Мы — Multi-vision, инновационная IT-компания с более чем 5-летним опытом работы на рынке, специализирующаяся на разработке приложений любой сложности.
             </p>
         </div>
     </div>
 </div>
+
+<script>
+    import { gsap } from "gsap";
+    
+    const onloadAnimation = () => {
+        gsap.fromTo(
+            ".hero-title > div:nth-child(1)",
+            { x: -100, opacity: 0 },
+            { x: 0, opacity: 1, duration: 1 }
+        );
+        gsap.fromTo(
+            ".hero-title > div:nth-child(2)",
+            { x: -100, opacity: 0 },
+            { x: 0, opacity: 1, duration: 1, delay: 0.2 }
+        );
+        gsap.fromTo(
+            ".hero-title > div:nth-child(3)",
+            { x: -100, opacity: 0 },
+            { x: 0, opacity: 1, duration: 1, delay: 0.4 }
+        );
+        gsap.fromTo(
+            ".hero-description",
+            { opacity: 0 },
+            { opacity: 1, duration: 1, delay: 1.5 }
+        );
+    };
+
+    window.addEventListener('load', onloadAnimation);
+</script>

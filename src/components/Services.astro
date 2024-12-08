@@ -3,9 +3,8 @@ import Title from "./Title.astro";
 import Subtitle from "./Subtitle.astro";
 import Card from "./Card.astro";
 ---
-
 <div class="max-w-[1440px] mx-auto flex flex-col gap-8 sm:gap-16 px-[10px] lg:px-12 py-[56px] lg:py-[34px]">
-    <div class="pl-0 md:pl-16 mx-auto max-w-2xl">
+    <div class="pl-0 md:pl-16 mx-auto max-w-2xl service-content">
         <Title>какие у нас услуги?</Title>
         <Subtitle>В нашей работе мы уделяем особое внимание качеству, инновационности и индивидуальному подходу к каждому проекту. Мы уверены, что современные технологии должны служить людям, и стремимся предложить только лучшие решения для вашего бизнеса. </Subtitle>
     </div>
@@ -16,3 +15,91 @@ import Card from "./Card.astro";
         <Card index={"3"} title={"Интеграция сложных технологий в бизнес-процессы"}/>
     </div>
 </div>
+
+<script>
+    import gsap from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);   
+
+    gsap.fromTo(
+        ".service-content",
+        {
+            opacity: 0,
+        },
+        {
+            opacity: 1,
+            duration: 1,
+            delay: 0.5,
+            ease: "power3.out", 
+            scrollTrigger: {
+                trigger: ".service-content",
+                start: "top 80%",
+                end: "bottom 60%",
+                once: true,
+                markers: false,
+            },
+        }
+    );
+
+    gsap.fromTo(".about-us-content",
+            {
+                opacity: 0
+            },
+            {
+                opacity: 1,
+                duration: 1,
+                ease: "power3.out", 
+                delay: 0.5,
+                scrollTrigger: {
+                    trigger: ".about-us-content",
+                    start: "bottom bottom",
+                    end: "bottom 60%",
+                    once: true,
+                    markers: false,
+                },
+            }
+    );
+
+    // Cards animation
+    const cards = document.querySelectorAll(".service-card");
+    console.log(cards);
+    cards.forEach((card, index) => {
+        gsap.fromTo(
+            card,
+            {
+                opacity: 0,
+                y: 100, // Start below the viewport
+            },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: "power2.out",
+                delay: index * 0.2, 
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 80%", // Trigger animation when card is visible
+                    once: true, // Animation runs only once
+                },
+            }
+        );
+
+        card.addEventListener("mouseenter", () => {
+            gsap.to(card, {
+                y: -5, 
+                scale: 1.02, 
+                duration: 0.4,
+                ease: "power2.out",
+            });
+        });
+
+        card.addEventListener("mouseleave", () => {
+            gsap.to(card, {
+                y: 0,
+                scale: 1,
+                duration: 0.3,
+                ease: "power2.out",
+            });
+        });
+    });
+</script>

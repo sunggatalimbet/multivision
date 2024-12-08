@@ -1,17 +1,67 @@
 ---
-import CircleCard from "./CircleCard.astro"
+import CircleCard from "./CircleCard.astro";
 ---
-
 <div class="pt-16 overflow-x-hidden z-30">
-    <h3 class="text-center text-wrap text-[28px] sm:text-[44px] md:text-[60px] lg:text-[82px] leading-[86.7%] tracking-[-4.5%]">
+    <h3 class="why-us-title text-center text-wrap text-[28px] sm:text-[44px] md:text-[60px] lg:text-[82px] leading-[86.7%] tracking-[-4.5%]">
         почему выбирают нас?
     </h3>
 
     <div class="sm:max-w-[560px] md:max-w-[740px] lg:max-w-[1440px] w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-center justify-center mx-auto pt-40 pb-24">
-        <CircleCard title="Более 5 лет успешного опыта на рынке"/>
-        <CircleCard title="Индивидуальный подход к каждому клиенту"/>
-        <CircleCard title="Современные и инновационные технологии"/>
-        <CircleCard title="Профессиональ-ная команда специалистов"/>
+        <CircleCard title="Более 5 лет успешного опыта на рынке" />
+        <CircleCard title="Индивидуальный подход к каждому клиенту" />
+        <CircleCard title="Современные и инновационные технологии" />
+        <CircleCard title="Профессиональ-ная команда специалистов" />
     </div>
-
 </div>
+
+<script>
+    import gsap from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Heading animation
+    gsap.fromTo(
+        ".why-us-title",
+        {
+            opacity: 0,
+            y: 20,
+        },
+        {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: "h3",
+                start: "top 90%",
+                once: true,
+            },
+        }
+    );
+
+    // Circle Card animations
+    const circleCards = document.querySelectorAll(".circle-card");
+    circleCards.forEach((card, index) => {
+        gsap.fromTo(
+            card,
+            {
+                opacity: 0,
+                y: 30,
+                scale: 0.95,
+            },
+            {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 0.8,
+                ease: "power2.out",
+                delay: index * 0.2, // Stagger effect
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 90%",
+                    once: true,
+                },
+            }
+        );
+    });
+</script>
