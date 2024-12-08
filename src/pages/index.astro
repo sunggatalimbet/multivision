@@ -24,18 +24,22 @@ import Layout from '../layouts/Layout.astro';
 
 <script>
     import gsap from "gsap";
-    // import Lenis from "lenis";
+    import Lenis from "lenis";
     import { ScrollTrigger } from "gsap/ScrollTrigger";
     
-    // const lenis = new Lenis({
-    //     autoRaf: true,
-    // });
+    const lenis = new Lenis();
+    lenis.on('scroll', ScrollTrigger.update);
 
-    // function raf(time: number) {
-    //     lenis.raf(time);
-    //     requestAnimationFrame(raf);
-    // }
-    // requestAnimationFrame(raf);
+    gsap.ticker.add((time) => {
+        lenis.raf(time * 1000); 
+    });
+    gsap.ticker.lagSmoothing(0);
+
+    function raf(time: number) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
 
     gsap.registerPlugin(ScrollTrigger);
 
