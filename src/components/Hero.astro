@@ -16,28 +16,25 @@
 <script>
     import { gsap } from "gsap";
     
-    const onloadAnimation = () => {
-        gsap.fromTo(
-            ".hero-title > div:nth-child(1)",
-            { x: -100, opacity: 0 },
-            { x: 0, opacity: 1, duration: 1 }
-        );
-        gsap.fromTo(
-            ".hero-title > div:nth-child(2)",
-            { x: -100, opacity: 0 },
-            { x: 0, opacity: 1, duration: 1, delay: 0.2 }
-        );
-        gsap.fromTo(
-            ".hero-title > div:nth-child(3)",
-            { x: -100, opacity: 0 },
-            { x: 0, opacity: 1, duration: 1, delay: 0.4 }
-        );
-        gsap.fromTo(
-            ".hero-description",
-            { opacity: 0 },
-            { opacity: 1, duration: 1, delay: 1.5 }
-        );
-    };
+    gsap.fromTo(
+        ".hero-title > div:nth-child(1)",
+        { x: -100, opacity: 0 },
+        { x: 0, opacity: 1, duration: 1 }
+    );
+    gsap.fromTo(
+        ".hero-title > div:nth-child(2)",
+        { x: -100, opacity: 0 },
+        { x: 0, opacity: 1, duration: 1, delay: 0.2 }
+    );
+    gsap.fromTo(
+        ".hero-title > div:nth-child(3)",
+        { x: -100, opacity: 0 },
+        { x: 0, opacity: 1, duration: 1, delay: 0.4 }
+    );
+    gsap.fromTo(
+        ".hero-description",
+        { opacity: 0 },
+        { opacity: 1, duration: 1, delay: 1.5 }
+    );
 
-    window.addEventListener('load', onloadAnimation);
 </script>

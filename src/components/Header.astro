@@ -18,21 +18,28 @@ import logoIcon from "../assets/logo.svg";
 
 <script>
     import { gsap } from "gsap";
+    import Lenis from "lenis";
+    const lenis = new Lenis({
+        autoRaf: true,
+    });
 
-    const onloadAnimation = () => {
-        gsap.fromTo("header",
-            {
-                y: -100, // Start from above the viewport
-                opacity: 0
-            },
-            {
-                y: 0, // Move to original position
-                opacity: 1,
-                duration: 1,
-                ease: "power3.out", // Smooth easing
-            }
-        );
+    function raf(time: number) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
     }
 
-    window.addEventListener('load', onloadAnimation);    
+    requestAnimationFrame(raf);
+
+    gsap.fromTo("header",
+        {
+            y: -100, // Start from above the viewport
+            opacity: 0
+        },
+        {
+            y: 0, // Move to original position
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out", // Smooth easing
+        }
+    );
 </script>
