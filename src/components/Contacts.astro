@@ -18,16 +18,26 @@ import messageIcon from "../assets/message-icon.svg";
             <p class="w-[290px] text-[15px] md:text-[18px] leading-[137%] tracking-[-4.5%]">Алматинская область г.Талдыкорган проспект Назарбаева.Н.122</p>
         </div>
         <div class="flex flex-row items-center gap-4">
-            <div class="p-[19px] bg-white rounded-full transition-transform duration-300 hover:scale-110 hover:shadow-lg">
-                <Image src={phoneIcon} alt="Иконка местоположения"/>
+            <div class="p-[19px] bg-white rounded-full transition-transform duration-300 hover:scale-110 hover:shadow-lg" data-phone>
+                <Image src={phoneIcon} alt="Иконка телефона"/>
             </div>
             <p class="text-[15px] md:text-[18px] leading-[137%] tracking-[-4.5%]">+7 708 959 1213</p>
         </div>
         <div class="flex flex-row items-center gap-4">
-            <div class="p-[19px] bg-white rounded-full transition-transform duration-300 hover:scale-110 hover:shadow-lg">
-                <Image src={messageIcon} alt="Иконка местоположения"/>
+            <div class="p-[19px] bg-white rounded-full transition-transform duration-300 hover:scale-110 hover:shadow-lg" data-email>
+                <Image src={messageIcon} alt="Иконка сообщения"/>
             </div>
             <p class="text-[15px] md:text-[18px] leading-[137%] tracking-[-4.5%]">llcmultivision@gmail.com</p>
         </div>
     </div>
 </div>
+
+<script>
+    document.querySelector('[data-phone]')?.addEventListener('click', () => {
+        window.location.href = 'tel:+77089591213';
+    });
+    
+    document.querySelector('[data-email]')?.addEventListener('click', () => {
+        window.location.href = 'mailto:llcmultivision@gmail.com';
+    });
+</script>
