@@ -31,32 +31,3 @@ import messageIcon from "../assets/message-icon.svg";
         </div>
     </div>
 </div>
-
-<script>
-    import gsap from "gsap";
-    import { ScrollTrigger } from "gsap/ScrollTrigger";
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Animating the contact section
-    gsap.fromTo(
-        ".contact-section", 
-        {
-            opacity: 0,
-            y: -50
-        },
-        {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            stagger: 0.3,
-            ease: "power3.out",
-            scrollTrigger: {
-                trigger: ".contact-section",
-                start: "top 80%",
-                end: "bottom 60%",
-                once: true,
-                markers: false,
-            },
-        }
-    );
-</script>

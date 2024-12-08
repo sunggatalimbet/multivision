@@ -22,3 +22,234 @@ import Layout from '../layouts/Layout.astro';
     </div>
 </Layout>
 
+<script>
+    import gsap from "gsap";
+    // import Lenis from "lenis";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    
+    // const lenis = new Lenis({
+    //     autoRaf: true,
+    // });
+
+    // function raf(time: number) {
+    //     lenis.raf(time);
+    //     requestAnimationFrame(raf);
+    // }
+    // requestAnimationFrame(raf);
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.fromTo('.about-us-decor', {
+                x: -100,  
+                y: 200,   
+                rotation: -20, 
+                scale: 0.7,
+                opacity: 0
+            }, 
+            {
+                x: 0,
+                y: 0,
+                rotation: 0,
+                scale: 1,
+                opacity: 1,
+                
+                // ScrollTrigger configuration
+                scrollTrigger: {
+                    trigger: '.about-us-decor',
+                    start: 'top 80%', 
+                    end: 'bottom 60%', 
+                    once: false,        
+                    markers: false      
+                },
+                
+                // Animation configuration
+                duration: 1.5,
+                ease: 'power2.out'
+            }
+    );
+
+    gsap.fromTo(
+        ".hero-title > div:nth-child(1)",
+        { x: -100, opacity: 0 },
+        { x: 0, opacity: 1, duration: 1 }
+    );
+
+    gsap.fromTo(
+        ".hero-title > div:nth-child(2)",
+        { x: -100, opacity: 0 },
+        { x: 0, opacity: 1, duration: 1, delay: 0.2 }
+    );
+
+    gsap.fromTo(
+        ".hero-title > div:nth-child(3)",
+        { x: -100, opacity: 0 },
+        { x: 0, opacity: 1, duration: 1, delay: 0.4 }
+    );
+
+    gsap.fromTo(
+        ".hero-description",
+        { opacity: 0 },
+        { opacity: 1, duration: 1, delay: 1.5 }
+    );
+
+    gsap.fromTo("header",
+        {
+            y: -100, // Start from above the viewport
+            opacity: 0
+        },
+        {
+            y: 0, // Move to original position
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out", // Smooth easing
+        }
+    );
+    
+    gsap.fromTo(
+        ".service-content",
+        {
+            opacity: 0,
+        },
+        {
+            opacity: 1,
+            duration: 1,
+            delay: 0.5,
+            ease: "power3.out", 
+            scrollTrigger: {
+                trigger: ".service-content",
+                start: "top 80%",
+                end: "bottom 60%",
+                once: true,
+                markers: false,
+            },
+        }
+    );
+
+    gsap.fromTo(".about-us-content",
+            {
+                opacity: 0
+            },
+            {
+                opacity: 1,
+                duration: 1,
+                ease: "power3.out", 
+                delay: 0.5,
+                scrollTrigger: {
+                    trigger: ".about-us-content",
+                    start: "bottom bottom",
+                    end: "bottom 60%",
+                    once: true,
+                    markers: false,
+                },
+            }
+    );
+
+    // Cards animation
+    const cards = document.querySelectorAll(".service-card");
+    cards.forEach((card, index) => {
+        gsap.fromTo(
+            card,
+            {
+                opacity: 0,
+                y: 100, // Start below the viewport
+            },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: "power2.out",
+                delay: index * 0.2, 
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 80%", // Trigger animation when card is visible
+                    once: true, // Animation runs only once
+                },
+            }
+        );
+
+        card.addEventListener("mouseenter", () => {
+            gsap.to(card, {
+                y: -5, 
+                scale: 1.02, 
+                duration: 0.4,
+                ease: "power2.out",
+            });
+        });
+
+        card.addEventListener("mouseleave", () => {
+            gsap.to(card, {
+                y: 0,
+                scale: 1,
+                duration: 0.3,
+                ease: "power2.out",
+            });
+        });
+    });
+
+    gsap.fromTo(
+        ".why-us-title",
+        {
+            opacity: 0,
+            y: 20,
+        },
+        {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: "h3",
+                start: "top 90%",
+                once: true,
+            },
+        }
+    );
+
+    // Circle Card animations
+    const circleCards = document.querySelectorAll(".circle-card");
+    circleCards.forEach((card, index) => {
+        gsap.fromTo(
+            card,
+            {
+                opacity: 0,
+                y: 30,
+                scale: 0.95,
+            },
+            {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 0.8,
+                ease: "power2.out",
+                delay: index * 0.2, // Stagger effect
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 90%",
+                    once: true,
+                },
+            }
+        );
+    });
+
+    gsap.fromTo(
+        ".contact-section", 
+        {
+            opacity: 0,
+            y: -50
+        },
+        {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            stagger: 0.3,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: ".contact-section",
+                start: "top 80%",
+                end: "bottom 60%",
+                once: true,
+                markers: false,
+            },
+        }
+    );
+</script>
