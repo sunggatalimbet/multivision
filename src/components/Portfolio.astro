@@ -7,45 +7,7 @@ import porfolio1 from "../assets/portfolio-1.png";
 import porfolio2 from "../assets/portfolio-2.png";
 ---
 <div class="max-w-[1440px] mx-auto flex flex-col gap-8 sm:gap-16 px-[10px] lg:px-12 py-[56px] lg:py-[34px]">
-    <div class="pl-0 md:pl-16 mx-auto max-w-2xl service-content">
-        <Title>наша продукция</Title>
-    </div>
-
-    <div class="flex flex-row flex-wrap justify-center gap-4">
-        <div class="h-full border-[#323232] border-[1px] p-4 max-w-xl rounded-lg shadow-xl portfolio-item">
-            <Image src={porfolio1} alt="изображение стрелки" layout="responsive" width={542} height={203} class="mb-2"/>
-            <Subtitle>Адресная табличка у. Уалиханова</Subtitle>
-            <button
-              id="toggleTable1"
-              class="w-full flex justify-between items-center px-6 py-4 text-gray-300 hover:bg-[#262626] transition-colors mt-2"
-            >
-              <span class="text-lg font-medium">Характеристики</span>
-              <svg xmlns="http://www.w3.org/2000/svg" class="transform transition-transform duration-300" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M6 9l6 6 6-6"/>
-              </svg>
-            </button>
-            <Table tableId="tableContent1"/>              
-        </div>
-        
-        <div class="flex flex-col border-[#323232] border-[1px] p-4 max-w-xl rounded-lg shadow-xl portfolio-item">
-            <div class="flex flex-col lg:h-[247px]">
-                <Image src={porfolio2} alt="изображение стрелки" layout="responsive"/>
-                <Subtitle>Адресная табличка пр. Абая</Subtitle>
-            </div>
-
-            <button
-            id="toggleTable2"
-            class="w-full flex justify-between items-center px-6 py-4 text-gray-300 hover:bg-[#262626] transition-colors mt-2"
-        >
-            <span class="text-lg font-medium">Характеристики</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="transform transition-transform duration-300" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M6 9l6 6 6-6"/>
-            </svg>
-        </button>
-            <Table tableId="tableContent2"/>              
-            </div>
-        </div>
-    </div>
+    
 </section>
 
 <script>
