@@ -1,13 +1,12 @@
 ---
-const { index, title } = Astro.props;
+const { index, title, description, icon } = Astro.props;
 ---
 
-<div class="service-card md:mx-auto md:w-2/3 lg:w-full flex flex-col h-[388px] md:h-[498px] items-start justify-between bg-[#262626] p-10 rounded-3xl">
-    <div class="inline">
-        <div class="rounded-full text-[18px] leading-[96.2%] tracking-[-4.5%] text-white/50 px-6 py-4 border-[1px] border-white/50">
-            Услуга №{index}
-        </div>    
+<div class="service-card md:mx-auto md:w-2/3 lg:w-full flex flex-col h-[388px] md:h-[498px] items-start justify-between bg-[#262626] p-10 rounded-3xl hover:bg-[#2a2a2a] transition-colors duration-300">
+    <div class="flex-1 flex flex-col justify-center">
+        <h3 class="text-[28px] sm:text-[36px] leading-[108%] tracking-[-4.5%] text-white mb-4 font-semibold">{title}</h3>
+        {description && (
+            <p class="text-[16px] sm:text-[18px] leading-[140%] text-white/80">{description}</p>
+        )}
     </div>
-
-    <p class="text-[33px] sm:text-[42px] leading-[108%] tracking-[-4.5%] text-white">{title}</p>
 </div>

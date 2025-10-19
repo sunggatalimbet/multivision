@@ -1,17 +1,96 @@
 ---
 import Title from "./Title.astro";
 import Subtitle from "./Subtitle.astro";
-import Card from "./Card.astro";
 ---
 <div id="services" class="max-w-[1440px] mx-auto flex flex-col gap-8 sm:gap-16 px-[10px] lg:px-12 py-[56px] lg:py-[130px]">
-    <div class="pl-0 md:pl-16 mx-auto max-w-2xl service-content">
-        <Title>Какие у нас услуги?</Title>
-        <Subtitle>В нашей работе мы уделяем особое внимание качеству, инновационности и индивидуальному подходу к каждому проекту. Мы уверены, что современные технологии должны служить людям, и стремимся предложить только лучшие решения для вашего бизнеса. </Subtitle>
+    <!-- Hero Section -->
+    <div class="pl-0 md:pl-16 mx-auto max-w-4xl service-content">
+        <Title>Сервер SKSIO - готовое решение для вашего бизнеса</Title>
+        <Subtitle>Мы специализируемся на поставке высокопроизводительного серверного оборудования. Наш сервер SKSIO полностью соответствует требованиям государственных и корпоративных тендеров с 100% совпадением технических спецификаций.</Subtitle>
     </div>
-    
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <Card index={"1"} title={"Разработка мобильных и веб-приложений"}/>
-        <Card index={"2"} title={"Разработка VR и AR реальность"}/>
-        <Card index={"3"} title={"Интеграция сложных технологий в бизнес-процессы"}/>
+
+    <!-- Key Advantages Section -->
+    <div class="bg-gradient-to-r from-[#1a1a1a] to-[#2a2a2a] rounded-3xl p-8 lg:p-12">
+        <h2 class="text-[32px] sm:text-[42px] lg:text-[48px] font-bold text-white mb-8 text-center">Почему выбирают сервер SKSIO</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-[#262626] rounded-2xl p-6 hover:bg-[#2a2a2a] transition-colors duration-300">
+                <h3 class="text-xl font-semibold text-white mb-3">Максимальная производительность</h3>
+                <p class="text-white/80 text-sm">256 потоков обработки, 2.3 TB DDR5-6400 памяти, 4× NVIDIA H200 NVL для AI/ML и HPC вычислений</p>
+            </div>
+            <div class="bg-[#262626] rounded-2xl p-6 hover:bg-[#2a2a2a] transition-colors duration-300">
+                <h3 class="text-xl font-semibold text-white mb-3">Отказоустойчивость</h3>
+                <p class="text-white/80 text-sm">8 блоков питания 3200 Вт Titanium, hot-swap компоненты, RAID1 загрузочные накопители</p>
+            </div>
+            <div class="bg-[#262626] rounded-2xl p-6 hover:bg-[#2a2a2a] transition-colors duration-300">
+                <h3 class="text-xl font-semibold text-white mb-3">Высокоскоростные сети</h3>
+                <p class="text-white/80 text-sm">200 Гбит/с пропускная способность, 100 GbE QSFP56, NVMe-oTCP offloading</p>
+            </div>
+            <div class="bg-[#262626] rounded-2xl p-6 hover:bg-[#2a2a2a] transition-colors duration-300">
+                <h3 class="text-xl font-semibold text-white mb-3">Удалённое управление</h3>
+                <p class="text-white/80 text-sm">HTML5-консоль без Java/ActiveX, управление до 8000 устройств, автоматическое обнаружение</p>
+            </div>
+            <div class="bg-[#262626] rounded-2xl p-6 hover:bg-[#2a2a2a] transition-colors duration-300">
+                <h3 class="text-xl font-semibold text-white mb-3">Безопасность данных</h3>
+                <p class="text-white/80 text-sm">ECC память с коррекцией ошибок, проверка целостности микрокодов, шифрование консольных сессий</p>
+            </div>
+            <div class="bg-[#262626] rounded-2xl p-6 hover:bg-[#2a2a2a] transition-colors duration-300">
+                <h3 class="text-xl font-semibold text-white mb-3">Полное сопровождение</h3>
+                <p class="text-white/80 text-sm">36 месяцев гарантии, поддержка 24/7, выезд инженера ≤ 72 часов, обучение персонала</p>
+            </div>
+        </div>
+    </div>    
+
+    <!-- Technical Highlights Section -->
+    <div class="bg-gradient-to-r from-[#1a1a1a] to-[#2a2a2a] rounded-3xl p-8 lg:p-12">
+        <h2 class="text-[32px] sm:text-[42px] lg:text-[48px] font-bold text-white mb-8 text-center">Ключевые технические характеристики</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="space-y-4">
+                <div class="bg-[#262626] rounded-2xl p-6">
+                    <h4 class="text-lg font-semibold text-white mb-2">Процессорная мощность</h4>
+                    <p class="text-white/80">2× процессора SKSIORT: 256 потоков, 2.7 GHz, 512 MB кэш</p>
+                </div>
+                <div class="bg-[#262626] rounded-2xl p-6">
+                    <h4 class="text-lg font-semibold text-white mb-2">Оперативная память</h4>
+                    <p class="text-white/80">1152 GB DDR5-6400 ECC, поддержка до 2.3 TB</p>
+                </div>
+                <div class="bg-[#262626] rounded-2xl p-6">
+                    <h4 class="text-lg font-semibold text-white mb-2">Графические ускорители</h4>
+                    <p class="text-white/80">4× NVIDIA H200 NVL 141 GB с 4-way NVLink bridge</p>
+                </div>
+            </div>
+            <div class="space-y-4">
+                <div class="bg-[#262626] rounded-2xl p-6">
+                    <h4 class="text-lg font-semibold text-white mb-2">Накопители</h4>
+                    <p class="text-white/80">4× E3.S Gen5 NVMe по 7.68 TB, 2× M.2 960 GB RAID1</p>
+                </div>
+                <div class="bg-[#262626] rounded-2xl p-6">
+                    <h4 class="text-lg font-semibold text-white mb-2">Сетевые возможности</h4>
+                    <p class="text-white/80">200 Гбит/с, 100 GbE QSFP56, NVMe-oTCP offloading</p>
+                </div>
+                <div class="bg-[#262626] rounded-2xl p-6">
+                    <h4 class="text-lg font-semibold text-white mb-2">Питание и охлаждение</h4>
+                    <p class="text-white/80">8× БП 3200 Вт Titanium, воздушное охлаждение</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-8">
+            <a href="/technical-specs" class="bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-gray-200 transition-colors duration-300 inline-block">
+                Подробные технические характеристики
+            </a>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="text-center bg-[#262626] rounded-3xl p-8 lg:p-12">
+        <h2 class="text-[32px] sm:text-[42px] lg:text-[48px] font-bold text-white mb-6">Готовы к сотрудничеству?</h2>
+        <p class="text-[18px] text-white/80 mb-8 max-w-2xl mx-auto">Свяжитесь с нами для подбора конфигурации под ваш проект. Мы обеспечим 100% соответствие техническим требованиям и полное сопровождение от поставки до ввода в эксплуатацию.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#contacts" class="bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-gray-200 transition-colors duration-300">
+                Связаться с нами
+            </a>
+            <a href="/technical-specs" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-black transition-colors duration-300">
+                Технические характеристики
+            </a>
+        </div>
     </div>
 </div>
