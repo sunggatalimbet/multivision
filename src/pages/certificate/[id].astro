@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/Header.astro';
 
 
 const certificates: Record<string, any> = {
@@ -89,8 +88,6 @@ console.log('Certificate found:', certificate ? certificate.studentName : 'null'
 
 <Layout>
   <div class="flex flex-col bg-no-repeat bg-cover bg-center bg-[url('/src/assets/hero-bg.jpg')] min-h-screen px-[10px] lg:px-12 py-[22px] lg:py-[34px]">
-    <Header/>
-    
     <!-- Main Content -->
     <div class="flex-1 flex items-center justify-center py-20">
       <div class="max-w-4xl mx-auto px-4 certificate-content">
@@ -110,9 +107,8 @@ console.log('Certificate found:', certificate ? certificate.studentName : 'null'
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
                   </div>
-                  <h2 class="text-2xl font-bold text-green-400">Сертификат подтверждён</h2>
+                  <h2 class="text-2xl font-bold text-green-400">Сертификат действителен</h2>
                 </div>
-                <p class="text-white/70 text-sm">Проверено {new Date().toLocaleDateString('ru-RU')}</p>
               </div>
 
               <!-- Certificate Details -->
@@ -150,7 +146,7 @@ console.log('Certificate found:', certificate ? certificate.studentName : 'null'
                       <span class="text-white/70 font-medium">Название курса:</span>
                       <p class="text-white font-bold mt-1">{certificate.courseName}</p>
                     </div>
-                    <div class="grid grid-cols-2 gap-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <span class="text-white/70 font-medium">Продолжительность:</span>
                         <p class="text-white font-bold">{certificate.duration}</p>
@@ -192,7 +188,7 @@ console.log('Certificate found:', certificate ? certificate.studentName : 'null'
                     </svg>
                     Даты
                   </h3>
-                  <div class="grid grid-cols-2 gap-4">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <span class="text-white/70 font-medium">Дата завершения:</span>
                       <p class="text-white font-bold">{certificate.completionDate}</p>
@@ -208,12 +204,10 @@ console.log('Certificate found:', certificate ? certificate.studentName : 'null'
               <!-- Footer -->
               <div class="mt-8 pt-6 border-t border-white/20 text-center">
                 <p class="text-white/70 text-sm mb-4">
-                  Этот сертификат цифрово подтвержден и может быть аутентифицирован через нашу систему.
+                  Этот сертификат может быть аутентифицирован через нашу систему.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-2 text-white/60 text-xs">
                   <span>ID Сертификата: <span class="font-mono text-blue-300">{certificate.id}</span></span>
-                  <span class="hidden sm:block">|</span>
-                  <span>Подтверждено: {new Date().toLocaleDateString('ru-RU')}</span>
                 </div>
               </div>
             </div>
