@@ -62,6 +62,18 @@ const certificates: Record<string, any> = {
     instructor: "Проф. Нургалиева А.С.",
     skills: ["Python", "Machine Learning", "Deep Learning", "Neural Networks", "PyTorch", "Natural Language Processing"],
     verified: true
+  },
+  "CERT-2025-429": {
+    id: "CERT-2025-429",
+    studentName: "Баймуканова Эленора Исмадияровна",
+    courseName: "Инженерно-технический специалист",
+    completionDate: "08.01.2025",
+    issueDate: "13.01.2025",
+    duration: "180 часов",
+    grade: "Отлично",
+    instructor: "Инж. Петров И.С.",
+    skills: ["Системное проектирование", "Техническая документация", "CAD/CAM", "Автоматизация процессов", "Инженерный анализ", "Проектное управление"],
+    verified: true
   }
 };
 
@@ -72,7 +84,8 @@ export async function getStaticPaths() {
     { params: { id: "CERT-2019-156" } },
     { params: { id: "CERT-2019-392" } },
     { params: { id: "CERT-2020-634" } },
-    { params: { id: "CERT-2021-758" } }
+    { params: { id: "CERT-2021-758" } },
+    { params: { id: "CERT-2025-429" } }
   ];
 }
 
