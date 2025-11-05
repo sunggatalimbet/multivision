@@ -74,6 +74,18 @@ const certificates: Record<string, any> = {
     instructor: "Инж. Петров И.С.",
     skills: ["Системное проектирование", "Техническая документация", "CAD/CAM", "Автоматизация процессов", "Инженерный анализ", "Проектное управление"],
     verified: true
+  },
+  "CERT-2025-582": {
+    id: "CERT-2025-582",
+    studentName: "АҚЫЛБАЕВ НАУАН НУСРЕТҰЛЫ",
+    courseName: "Описание бизнес-процессов BPMN",
+    completionDate: "10.01.2025",
+    issueDate: "15.01.2025",
+    duration: "100 часов",
+    grade: "Отлично",
+    instructor: "Бизнес-аналитик Иванова М.К.",
+    skills: ["BPMN 2.0", "Моделирование бизнес-процессов", "Анализ процессов", "Оптимизация процессов", "Business Process Management", "Workflow Design"],
+    verified: true
   }
 };
 
@@ -85,7 +97,8 @@ export async function getStaticPaths() {
     { params: { id: "CERT-2019-392" } },
     { params: { id: "CERT-2020-634" } },
     { params: { id: "CERT-2021-758" } },
-    { params: { id: "CERT-2025-429" } }
+    { params: { id: "CERT-2025-429" } },
+    { params: { id: "CERT-2025-582" } }
   ];
 }
 
