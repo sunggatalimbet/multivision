@@ -86,6 +86,18 @@ const certificates: Record<string, any> = {
     instructor: "Бизнес-аналитик Иванова М.К.",
     skills: ["BPMN 2.0", "Моделирование бизнес-процессов", "Анализ процессов", "Оптимизация процессов", "Business Process Management", "Workflow Design"],
     verified: true
+  },
+  "CERT-2025-583": {
+    id: "CERT-2025-583",
+    studentName: "БЕКАЙДАР АҚЖАН БОЛАТҚЫЗЫ",
+    courseName: "Специалист в сфере информационной безопасности с сертификацией eLearnSecurity Web application Penetration Tester Extreme",
+    completionDate: "15.01.2025",
+    issueDate: "25.01.2025",
+    duration: "200 часов",
+    grade: "Отлично",
+    instructor: "Эксперт по кибербезопасности Калиев Д.М.",
+    skills: ["Web Application Penetration Testing", "OWASP Top 10", "Burp Suite", "SQL Injection", "XSS (Cross-Site Scripting)", "CSRF", "Authentication Bypass", "API Security Testing", "Network Security", "Vulnerability Assessment", "Security Auditing", "Metasploit Framework"],
+    verified: true
   }
 };
 
@@ -98,7 +110,8 @@ export async function getStaticPaths() {
     { params: { id: "CERT-2020-634" } },
     { params: { id: "CERT-2021-758" } },
     { params: { id: "CERT-2025-429" } },
-    { params: { id: "CERT-2025-582" } }
+    { params: { id: "CERT-2025-582" } },
+    { params: { id: "CERT-2025-583" } }
   ];
 }
 
