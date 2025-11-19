@@ -98,6 +98,18 @@ const certificates: Record<string, any> = {
     instructor: "Эксперт по кибербезопасности Калиев Д.М.",
     skills: ["Web Application Penetration Testing", "OWASP Top 10", "Burp Suite", "SQL Injection", "XSS (Cross-Site Scripting)", "CSRF", "Authentication Bypass", "API Security Testing", "Network Security", "Vulnerability Assessment", "Security Auditing", "Metasploit Framework"],
     verified: true
+  },
+  "CERT-2025-584": {
+    id: "CERT-2025-584",
+    studentName: "Баймуканова Эленора Исмадияровна",
+    courseName: "Certified programme director - International Project Management Association (IPMA) Level A",
+    completionDate: "20.01.2025",
+    issueDate: "30.01.2025",
+    duration: "250 часов",
+    grade: "Отлично",
+    instructor: "IPMA Certified Trainer Смирнов В.П.",
+    skills: ["Programme Management", "Strategic Project Management", "Portfolio Management", "Stakeholder Management", "Risk Management", "Leadership", "Change Management", "Resource Management", "Quality Management", "IPMA Competence Baseline", "Project Governance", "Business Strategy Alignment"],
+    verified: true
   }
 };
 
@@ -111,7 +123,8 @@ export async function getStaticPaths() {
     { params: { id: "CERT-2021-758" } },
     { params: { id: "CERT-2025-429" } },
     { params: { id: "CERT-2025-582" } },
-    { params: { id: "CERT-2025-583" } }
+    { params: { id: "CERT-2025-583" } },
+    { params: { id: "CERT-2025-584" } }
   ];
 }
 
