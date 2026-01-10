@@ -110,6 +110,30 @@ const certificates: Record<string, any> = {
     instructor: "IPMA Certified Trainer Смирнов В.П.",
     skills: ["Programme Management", "Strategic Project Management", "Portfolio Management", "Stakeholder Management", "Risk Management", "Leadership", "Change Management", "Resource Management", "Quality Management", "IPMA Competence Baseline", "Project Governance", "Business Strategy Alignment"],
     verified: true
+  },
+  "CERT-2025-585": {
+    id: "CERT-2025-585",
+    studentName: "ЛАУБАЙ АЛДИЯР АЙДАРҰЛЫ",
+    courseName: "Service Desk: организация службы поддержки пользователей в соответствии с ITIL",
+    completionDate: "10.02.2025",
+    issueDate: "20.02.2025",
+    duration: "120 часов",
+    grade: "Отлично",
+    instructor: "ITIL Certified Instructor Нургалиев А.К.",
+    skills: ["ITIL Framework", "Service Desk Management", "Incident Management", "Problem Management", "Request Fulfillment", "Service Level Management", "IT Service Management", "Customer Support", "Ticket Management", "Knowledge Management", "Change Management", "Service Catalog"],
+    verified: true
+  },
+  "CERT-2025-586": {
+    id: "CERT-2025-586",
+    studentName: "Дулаткызы Аружан",
+    courseName: "Мониторинг и техническая эксплуатация систем",
+    completionDate: "15.02.2025",
+    issueDate: "25.02.2025",
+    duration: "140 часов",
+    grade: "Отлично",
+    instructor: "Инженер-системный администратор Садыков М.Р.",
+    skills: ["System Monitoring", "Infrastructure Monitoring", "Performance Monitoring", "Log Management", "Alert Management", "System Maintenance", "Troubleshooting", "Network Monitoring", "Application Monitoring", "Infrastructure Management", "Automated Monitoring", "Incident Response"],
+    verified: true
   }
 };
 
@@ -124,7 +148,9 @@ export async function getStaticPaths() {
     { params: { id: "CERT-2025-429" } },
     { params: { id: "CERT-2025-582" } },
     { params: { id: "CERT-2025-583" } },
-    { params: { id: "CERT-2025-584" } }
+    { params: { id: "CERT-2025-584" } },
+    { params: { id: "CERT-2025-585" } },
+    { params: { id: "CERT-2025-586" } }
   ];
 }
 
